@@ -1,4 +1,4 @@
-package com.jamesjohnson.plugins.capprint;
+package com.hectare.plugins.capprint;
 
 import android.util.Log;
 
