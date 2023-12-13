@@ -18,10 +18,19 @@ public class CapPrintPlugin: CAPPlugin {
     
     @objc func nativePrint(_ call: CAPPluginCall) {
         guard let webView = self.webView else { return }
-        let jsPrint = "print()"
         
         DispatchQueue.main.async {
-            webView.evaluateJavaScript(jsPrint, completionHandler: nil)
+            let printController = UIPrintInteractionController.shared
+
+            let printInfo = UIPrintInfo(dictionary: nil)
+            printInfo.outputType = .general
+            printInfo.jobName = "Web Page Print"
+            printController.printInfo = printInfo
+
+            let printFormatter = webView.viewPrintFormatter()
+            printController.printFormatter = printFormatter
+
+            printController.present(from: webView.bounds, in: webView, animated: true, completionHandler: nil)
         }
     }
 }
