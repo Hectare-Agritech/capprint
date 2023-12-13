@@ -22,14 +22,14 @@
         "slug": "echo"
       },
       {
-        "name": "print",
+        "name": "nativePrint",
         "signature": "() => void",
         "parameters": [],
         "returns": "void",
         "tags": [],
         "docs": "",
         "complexTypes": [],
-        "slug": "print"
+        "slug": "nativeprint"
       }
     ],
     "properties": []

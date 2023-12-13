@@ -15,4 +15,19 @@ public class CapPrintPlugin: CAPPlugin {
             "value": implementation.echo(value)
         ])
     }
+    
+    @objc func nativePrint(_ call: CAPPluginCall) {
+        guard let webView = self.webView else { return }
+        
+        let printController = UIPrintInteractionController.shared
+        
+        let printInfo = UIPrintInfo(dictionary: nil)
+        printInfo.outputType = .general
+        printInfo.jobName = "Web Page Print"
+
+        printController.printInfo = printInfo
+        printController.printFormatter = webView.viewPrintFormatter()
+
+        printController.present(from: accessibilityFrame, in: webView, animated: true, completionHandler: nil)
+    }
 }

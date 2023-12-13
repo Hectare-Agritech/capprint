@@ -25,7 +25,7 @@ public class CapPrintPlugin extends Plugin {
   }
 
   @PluginMethod
-  public void print(PluginCall call) {
+  public void nativePrint(PluginCall call) {
     getActivity().runOnUiThread(new Runnable() {
       @Override
       public void run() {

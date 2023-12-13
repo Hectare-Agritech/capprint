@@ -10,7 +10,7 @@ var capacitorCapPrint = (function (exports, core) {
             console.log('ECHO', options);
             return options;
         }
-        print() {
+        nativePrint() {
             window.print();
         }
     }

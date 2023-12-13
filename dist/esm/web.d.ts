@@ -6,5 +6,5 @@ export declare class CapPrintWeb extends WebPlugin implements CapPrintPlugin {
     }): Promise<{
         value: string;
     }>;
-    print(): void;
+    nativePrint(): void;
 }

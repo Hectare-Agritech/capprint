@@ -8,7 +8,7 @@ export class CapPrintWeb extends WebPlugin implements CapPrintPlugin {
     return options;
   }
 
-  print(): void {
+  nativePrint(): void {
     window.print()
   }
 }

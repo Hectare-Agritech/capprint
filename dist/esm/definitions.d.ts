@@ -4,5 +4,5 @@ export interface CapPrintPlugin {
     }): Promise<{
         value: string;
     }>;
-    print(): void;
+    nativePrint(): void;
 }

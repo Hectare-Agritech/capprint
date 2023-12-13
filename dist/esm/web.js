@@ -4,7 +4,7 @@ export class CapPrintWeb extends WebPlugin {
         console.log('ECHO', options);
         return options;
     }
-    print() {
+    nativePrint() {
         window.print();
     }
 }

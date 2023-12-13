@@ -14,7 +14,7 @@ npx cap sync
 <docgen-index>
 
 * [`echo(...)`](#echo)
-* [`print()`](#print)
+* [`nativePrint()`](#nativeprint)
 
 </docgen-index>
 
@@ -36,10 +36,10 @@ echo(options: { value: string; }) => Promise<{ value: string; }>
 --------------------
 
 
-### print()
+### nativePrint()
 
 ```typescript
-print() => void
+nativePrint() => void
 ```
 
 --------------------

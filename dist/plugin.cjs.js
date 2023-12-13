@@ -13,7 +13,7 @@ class CapPrintWeb extends core.WebPlugin {
         console.log('ECHO', options);
         return options;
     }
-    print() {
+    nativePrint() {
         window.print();
     }
 }

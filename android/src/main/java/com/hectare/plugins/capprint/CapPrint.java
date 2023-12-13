@@ -9,7 +9,7 @@ public class CapPrint {
         return value;
     }
 
-    public String print() {
+    public String nativePrint() {
         Log.i("CapPrint", "print");
         return "Print";
     }
