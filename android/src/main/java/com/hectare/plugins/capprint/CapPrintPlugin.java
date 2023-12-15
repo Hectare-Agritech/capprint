@@ -1,5 +1,9 @@
 package com.hectare.plugins.capprint;
 
+import android.os.Bundle;
+import android.os.CancellationSignal;
+import android.os.ParcelFileDescriptor;
+import android.print.PageRange;
 import android.print.PrintAttributes;
 import android.print.PrintDocumentAdapter;
 import android.print.PrintManager;
@@ -35,6 +39,8 @@ public class CapPrintPlugin extends Plugin {
 
         printBuilder.setMediaSize(PrintAttributes.MediaSize.ISO_A4);
         printBuilder.setMinMargins(PrintAttributes.Margins.NO_MARGINS);
+
+        getBridge().getWebView().setMinimumHeight(5000);
 
         printManager.print("Hectare Document", printDocumentAdapter, printBuilder.build());
       }
