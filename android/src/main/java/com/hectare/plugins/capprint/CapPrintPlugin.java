@@ -30,9 +30,13 @@ public class CapPrintPlugin extends Plugin {
       @Override
       public void run() {
         PrintManager printManager = (PrintManager) getContext().getSystemService(getContext().PRINT_SERVICE);
-
+        PrintAttributes.Builder printBuilder = new PrintAttributes.Builder();
         PrintDocumentAdapter printDocumentAdapter = getBridge().getWebView().createPrintDocumentAdapter("Hectare Document");
-        printManager.print("Hectare Document", printDocumentAdapter, new PrintAttributes.Builder().build());
+
+        printBuilder.setMediaSize(PrintAttributes.MediaSize.ISO_A4);
+        printBuilder.setMinMargins(PrintAttributes.Margins.NO_MARGINS);
+
+        printManager.print("Hectare Document", printDocumentAdapter, printBuilder.build());
       }
     });
 
